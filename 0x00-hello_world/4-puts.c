@@ -3,7 +3,7 @@
  * The header file
  * Replace printf with puts
  * Return 0
- * */
+**/
 
 int main(void)
 {
