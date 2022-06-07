@@ -1,7 +1,7 @@
 /**
 * Created By: Raheem Salifu Kasim
 * Function declarations as header files
-**/_
+**/
 
 int _putchar(char c);
 void print_alphabet(void);
