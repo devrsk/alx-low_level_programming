@@ -1,46 +1,20 @@
-#include <stdio.h>
 #include "main.h"
-
 /**
- *_strlen - returns the length of a string
- *@str:a string of length to be returned
- *Return: returns the length of a string
- */
-int _strlen(char *str)
-{
-	int length = 0;
-
-	while (*str)
-	{
-		str++;
-		length++;
-	}
-
-	return (length);
-
-}
-
-
-/**
- *_strcat - concatinates two strings
- *@dest:destination pointer
- *@src:pointer to a string
- *Return: concatinated string
+ * _strcat - concatenates two strings
+ * @dest: pointer to string
+ * @src: pointer to string
+ * Return: dest
  */
 char *_strcat(char *dest, char *src)
 {
-	char *cat = dest + _strlen(dest);
-	int length =  _strlen(dest) + _strlen(src);
 
-	while (*src)
-	{
-		*cat += *src;
-		src++;
-		cat++;
-	}
-	*cat += '\0';
-	cat -= (length);
-	*dest = *cat;
+	int index = 0, dest_len = 0;
 
-	return (cat);
+	while (dest[index++])
+		dest_len++;
+
+	for (index = 0; src[index]; index++)
+		dest[dest_len++] = src[index];
+
+	return (dest);
 }
