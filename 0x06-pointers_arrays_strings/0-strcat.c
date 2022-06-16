@@ -1,5 +1,7 @@
+#include <stdio.h>
 #include "main.h"
-/**
+
+**
  *_strcat - concatinates two strings
  *@dest:destination pointer
  *@src:pointer to a string
