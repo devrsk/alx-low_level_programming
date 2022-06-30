@@ -1,14 +1,25 @@
-#ifndef MAIN_H
-#define MAIN_H
-/**
- * Author: Raheem Salifu Kasim
- * Desc: Header file containing all the prototypes used in 0x0C-more_alloc_free
- */
+#ifndef MAIN_FILE
+#define MAIN_FILE
+
+#include <stdlib.h>
+#include <stdio.h>
+
+#define min(x, y) (((x) < (y)) ? (x) : (y))
+
 int _putchar(char c);
 void *malloc_checked(unsigned int b);
 char *string_nconcat(char *s1, char *s2, unsigned int n);
 void *_calloc(unsigned int nmemb, unsigned int size);
-int *array_arrange(int min, int max);
-void *_realloc(void *ptr, unsigned int old_size, usigned int new_size);
+int *array_range(int min, int max);
+void errors(void);
+int _strlen(char *s);
+int is_digit(char *s);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+int len(char *str);
+int find_len(char *str);
+char *create_xarray(int size);
+char *iterate_zeroes(char *str);
+void get_prod(char *prod, char *mult, int digit, int zeroes);
+void add_nums(char *final_prod, char *next_prod, int next_len);
 
 #endif
