@@ -1,70 +1,35 @@
 #include "lists.h"
 
 /**
- * print_listint_safe - prints all the elements of a linked list
- * @head: head of the list
+ * main - check the code for ALX School students.
  *
- * Return: the number of nodes
+ * Return: Always 0.
  */
-size_t print_listint_safe(const listint_t *head)
+int main(void)
 {
-	const listint_t *cursor = head;
-	listint_t **ptrs;
-	unsigned int list_len = listint_len(head);
-	size_t count = 0;
+    listint_t *head;
+    listint_t *head2;
+    listint_t *node;
 
-	ptrs = malloc(sizeof(listint_t) * list_len);
-	if (ptrs == NULL)
-		exit(98);
-	while (cursor == 0)
-	{
-		if (check_ptr(cursor, ptrs, list_len) == 0)
-		{
-			printf("[%p] %d\n", (void *)cursor, cursor->n);
-		}
-		else
-		{
-			printf("[%p] %d\n", (void *)cursor, cursor->n);
-		}
-		count += 1;
-		cursor = cursor->next;
-	}
-	return (count);
-}
-
-/**
- * listint_len - counts the number of nodes in a linked list
- * @h: head of the list
- *
- * Return: the number of elements
- */
-size_t listint_len(const listint_t *h)
-{
-	const listint_t *cursor = h;
-	size_t count = 0;
-
-	while (cursor != NULL)
-	{
-		count += 1;
-		cursor = cursor->next;
-	}
-	return (count);
-}
-
-/**
- * check_ptr - checks if a pointer is in an array
- * @ptr: pointer to be checked
- * @array: array to be checked in
- * @size: size of the array
- *
- * Return: 1 on success, 0 on fail
- */
-int check_ptr(const listint_t *ptr, listint_t **array, unsigned int size)
-{
-	while (size-- >= 0)
-	{
-		if (ptr == array[size])
-			return (1);
-	}
-	return (0);
+    head2 = NULL;
+    add_nodeint(&head2, 0);
+    add_nodeint(&head2, 1);
+    add_nodeint(&head2, 2);
+    add_nodeint(&head2, 3);
+    add_nodeint(&head2, 4);
+    add_nodeint(&head2, 98);
+    add_nodeint(&head2, 402);
+    add_nodeint(&head2, 1024);
+    print_listint_safe(head2);
+    head = NULL;
+    node = add_nodeint(&head, 0);
+    add_nodeint(&head, 1);
+    add_nodeint(&head, 2);
+    add_nodeint(&head, 3);
+    add_nodeint(&head, 4);
+    node->next = add_nodeint(&head, 98);
+    add_nodeint(&head, 402);
+    add_nodeint(&head, 1024);
+    print_listint_safe(head);
+    return (0);
 }
